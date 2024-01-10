@@ -1,0 +1,1 @@
+[2024-01-10T13:53:24.509+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: weather_dag_2.group_a.tsk_uploadS3_to_postgres manual__2024-01-10T13:53:20.538735+00:00 [queued]> finished (success) although the task says it's queued. (Info: None) Was the task killed externally?

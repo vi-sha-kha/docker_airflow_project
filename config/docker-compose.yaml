@@ -284,3 +284,4 @@ volumes:
   postgres-db-volume:
 
    - ./config/airflow.cfg:/opt/airflow/airflow.cfg
+   - 5432:5432
