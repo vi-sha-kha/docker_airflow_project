@@ -1,6 +1,6 @@
 from airflow import DAG
 from datetime import timedelta, datetime
-from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.empty import EmptyOperator
 from airflow.utils.task_group import TaskGroup
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 
@@ -20,7 +20,7 @@ with DAG('weather_dag_2',
         schedule_interval = '@daily',
         catchup=False) as dag:
 
-        start_pipeline = DummyOperator(
+        start_pipeline = EmptyOperator(
             task_id = 'tsk_start_pipeline'
         )
 
@@ -53,3 +53,5 @@ with DAG('weather_dag_2',
 
             create_table_1>>truncate_table>>uploadS3_to_postgres
         start_pipeline>>group_A
+
+        
